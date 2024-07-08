@@ -83,6 +83,9 @@ class _SignInScreenState extends State<SignInScreen> {
                         if (value?.trim().isEmpty ?? true) {
                           return 'Enter your password';
                         }
+                        if(AppConstants.passwordRegExp.hasMatch(value!) == false){
+                          return "Must contain 8 characters, one uppercase and lowercase\n letter, a number, and a symbol.";
+                        }
                         return null;
                       },
                     ),
@@ -174,6 +177,7 @@ class _SignInScreenState extends State<SignInScreen> {
      else {
       if (mounted) {
         showSnackBarMessage(context, 'Sign in failed!! please try again.');
+
         await Future.delayed(const Duration(seconds: 1));
         setState(() {
           signInProgress = false;
@@ -204,8 +208,9 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   void dispose() {
-    super.dispose();
+
     _emailTEController.dispose();
     _passwordTEController.dispose();
+    super.dispose();
   }
 }
