@@ -55,11 +55,11 @@ class _SignUpScreenState extends State<SignUpScreen>{
                           ),
                           validator: (String ? value){
                             if(value?.trim().isEmpty ?? true){
-                              return 'Write your Email';
+                              return 'Enter your Email';
                             }
                             if(AppConstants.emailRegExp.hasMatch(value!) == false){
                               //print('Its working!!');
-                              return 'Write your valid email address';
+                              return 'Enter your valid email address';
                             }
                             return null;
                           },
@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen>{
                           //autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (String ? value){
                             if(value?.trim().isEmpty ?? true){
-                              return 'Write your First Name';
+                              return 'Enter your first name';
                             }
 
                             return null;
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen>{
                           ),
                           validator: (String ? value){
                             if(value?.trim().isEmpty ?? true){
-                              return 'Write your Last Name';
+                              return 'Enter your last name';
                             }
                             return null;
                           },
@@ -103,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen>{
                           ),
                           validator: (String ? value){
                             if(value?.trim().isEmpty ?? true){
-                              return 'Write your Mobile Number';
+                              return 'Enter your mobile number';
                             }
                             if(AppConstants.mobileRegExp.hasMatch(value!) == false){
 
@@ -134,16 +134,15 @@ class _SignUpScreenState extends State<SignUpScreen>{
                           ),
                           validator: (String ? value){
                             if(value?.trim().isEmpty ?? true){
-                              return 'Write your Password';
+                              return 'Enter your password';
                             }
-                            if(value!.length< 8){
-                              return 'password should contain 8 character of ';
-                            }
-
+                           if(AppConstants.passwordRegExp.hasMatch(value!)== false){
+                             return "Must contain 8 characters, one uppercase and lowercase\n letter, a number, and a symbol.";
+                           }
                             return null;
                           },
                         ),
-                        const SizedBox(height: 16,),
+                        const SizedBox(height: 25,),
                         Visibility(
                           visible: registrationInProgress == false,
                           replacement: const Center(
@@ -248,11 +247,12 @@ class _SignUpScreenState extends State<SignUpScreen>{
 
   @override
   void dispose() {
-    super.dispose();
+
     _emailTEController.dispose();
     _passwordTEController.dispose();
     _firstNameTEController.dispose();
     _lastNameTEController.dispose();
     _mobileTEController.dispose();
+    super.dispose();
   }
 }
