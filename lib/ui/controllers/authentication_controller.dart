@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:task_manager/data/model/UserDataModel.dart';
+import 'package:task_manager/data/model/user_data_model.dart';
 
 
 class AuthenticationController{
 
-  static const String _accessTokenKey = 'assess_token';
+  static const String _accessTokenKey = 'access_token';
   static const String _userDataKey = 'user_data';
 
   static String accessToken = '';
@@ -42,15 +42,18 @@ class AuthenticationController{
   }
 
   static Future<void> clearAllData() async{
+
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.clear();
   }
 
   static Future<bool> checkIfUserLoggedInOrNot() async{
+
     String? tokenData = await getLogInToken();
     if(tokenData == null){
       return false;
-    }else{
+    }
+    else{
       accessToken = tokenData;
       userData = await getUserData();
       return true;

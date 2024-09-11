@@ -150,6 +150,7 @@ class _SignInScreenState extends State<SignInScreen> {
     setState(() {
       signInProgress = true;
     });
+    
     final Map<String, String> userSignInData = {
       "email": _emailTEController.text.trim(),
       "password": _passwordTEController.text

@@ -13,7 +13,8 @@ import 'package:task_manager/ui/widgets/snack_bar_message.dart';
 
 
 class ResetPasswordScreen extends StatefulWidget{
-  const ResetPasswordScreen({super.key, required this.email, required this.pinCode});
+  const ResetPasswordScreen({super.key,
+    required this.email, required this.pinCode});
 
   final String email;
   final String pinCode;
@@ -168,6 +169,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>{
      };
     ApiResponse response = await ApiCall.postResponse(UrlList.recoverResetPass, requestInput);
 
+    _resetPasswordInProgress = false;
+    if(mounted){
+      setState(() {
+
+      });
+    }
+
     if(response.isSuccess && response.responseData['status'] == 'success') {
 
       if (mounted) {
@@ -185,12 +193,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>{
         }
       }
 
-      _resetPasswordInProgress = false;
-      if(mounted){
-        setState(() {
 
-        });
-      }
     }
     
   }

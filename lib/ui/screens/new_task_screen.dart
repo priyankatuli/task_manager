@@ -50,6 +50,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         child:  Padding(
           padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _buildSummerySection(),
               const SizedBox(height: 10,),

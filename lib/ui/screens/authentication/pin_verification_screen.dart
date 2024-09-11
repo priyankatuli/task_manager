@@ -6,10 +6,17 @@ import 'package:task_manager/UI/screens/authentication/reset_password_screen.dar
 import 'package:task_manager/UI/screens/authentication/sign_in_screen.dart';
 import 'package:task_manager/UI/utility/app_colors.dart';
 import 'package:task_manager/UI/widgets/background_widget.dart';
+import 'package:task_manager/data/model/api_response.dart';
+import 'package:task_manager/data/network_caller/api_call.dart';
+import 'package:task_manager/ui/utility/url_list.dart';
+import 'package:task_manager/ui/widgets/centered_progress_Indicator.dart';
+import 'package:task_manager/ui/widgets/snack_bar_message.dart';
 
 
 class PinVerificationScreen extends StatefulWidget{
-  const PinVerificationScreen({super.key});
+  const PinVerificationScreen({super.key, required this.email});
+
+  final String email;
 
   @override
   State<StatefulWidget> createState() {
@@ -22,8 +29,9 @@ class PinVerificationScreen extends StatefulWidget{
 
 class _PinVerificationScreenState extends State<PinVerificationScreen>{
 
-  final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _pinTEController = TextEditingController();
+
+  bool _verifyOTPInProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +53,17 @@ class _PinVerificationScreenState extends State<PinVerificationScreen>{
                       const SizedBox(height: 16,),
                       _buildPinTextField(),
                       const SizedBox(height: 16,),
-                      ElevatedButton(onPressed: (){
-                        _onTapVerifyButton();
-                      }, child: const Text('Verify')),
+                      Visibility(
+                          visible: _verifyOTPInProgress == false,
+                          replacement: const CenteredProgressIndicator(),
+                          child:  ElevatedButton(onPressed: (){
+
+                            _getRecoverVerifyOTP();
+
+                          }, child: const Text('Verify')),
+                      ),
+
+
                       const SizedBox(height: 36,),
                       _buildBackToSignInSection()
                     ],
@@ -113,18 +129,65 @@ class _PinVerificationScreenState extends State<PinVerificationScreen>{
     );
   }
 
+  Future<void> _getRecoverVerifyOTP()async{
+
+    _verifyOTPInProgress = true;
+    if(mounted){
+      setState(() {
+
+      });
+    }
+
+    String pinCode = _pinTEController.text.trim();
+
+    ApiResponse response =
+    await ApiCall.getResponse('${UrlList.recoverVerifyOTP}/${widget.email}/$pinCode');
+
+
+    _verifyOTPInProgress = false;
+    if(mounted){
+      setState(() {
+
+      });
+    }
+
+    if(response.isSuccess && response.responseData['status'] == 'success'){
+      if(mounted){
+        _clearTextFields();
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>
+            ResetPasswordScreen(
+                    email: widget.email,pinCode: pinCode,)
+        ));
+        showSnackBarMessage(context, 'Verify successful');
+      }
+    } else{
+      if(mounted){
+        showSnackBarMessage(context, response.errorMessage ?? 'Verify failed!!please try again');
+      }
+    }
+
+  }
+
+  void _clearTextFields(){
+    _pinTEController.clear();
+  }
+
+
+
+
   void _onTapSignInButton(){
     //Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen(),),);
     //Navigator.pop(context);
 
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const SignInScreen()), (route) => false);
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const SignInScreen()),
+            (route) => false);
 
   }
 
-void _onTapVerifyButton(){
+//void _onTapVerifyButton(){
 
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const ResetPasswordScreen(),),);
-}
+  //  Navigator.push(context, MaterialPageRoute(builder: (context) => const ResetPasswordScreen(),),);
+//}
 
 
 
@@ -132,9 +195,10 @@ void _onTapVerifyButton(){
 
   @override
   void dispose(){
+
+    _pinTEController.dispose();
     super.dispose();
 
-    _emailTEController.dispose();
 
 
   }

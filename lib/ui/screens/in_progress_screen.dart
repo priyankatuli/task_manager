@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/UI/widgets/background_widget.dart';
 import 'package:task_manager/UI/widgets/task_item.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/model/task_list_wrapper_model.dart';
@@ -40,7 +41,14 @@ class _NewTaskScreenState extends State<InProgressScreen>{
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: RefreshIndicator(
+      body: BackgroundWidget(
+        child: Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+    child: Column(
+    children: [
+    const SizedBox(height: 10,),
+    Expanded(
+    child:RefreshIndicator(
         onRefresh: ()async{
           await _getInProgress();
         },
@@ -60,8 +68,9 @@ class _NewTaskScreenState extends State<InProgressScreen>{
             ),
         ),
       )
-
-
+    ),],
+    ))
+    )
     );
 
   }

@@ -10,7 +10,6 @@ class ApiCall {
 
   static Future<ApiResponse> getResponse(String url) async {
     try {
-
       debugPrint(url);
       Response serverResponse = await get(Uri.parse(url),
           headers: {'token': AuthenticationController.accessToken});
@@ -25,14 +24,14 @@ class ApiCall {
             isSuccess: true,
             responseData: serverResponseData,
             errorMessage: null);
-      } else if(serverResponse.statusCode == 401) {
+      } else if (serverResponse.statusCode == 401) {
         redirectToLogin();
         return ApiResponse(
             statusCode: serverResponse.statusCode,
             isSuccess: false
         );
       }
-      else{
+      else {
         return ApiResponse(
             statusCode: serverResponse.statusCode,
             isSuccess: false
@@ -46,8 +45,7 @@ class ApiCall {
       );
     }
   }
-
-  static Future<ApiResponse> postResponse(String url,
+   static Future<ApiResponse> postResponse(String url,
       Map<String, dynamic>? body) async {
     try {
       debugPrint(url);
