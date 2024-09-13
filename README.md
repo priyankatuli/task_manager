@@ -1,16 +1,9 @@
-# task_manager
+# Task Manager
 
-A new Flutter task manager project.
+A Task Manager application is a productivity tool that helps users manage, track, and organize their tasks efficiently. Users can take control of their to-do lists and focus on achieving their goals with greater efficiency and clearity.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Tech Stack
+Flutter
+Dart
+Rest API
+  
