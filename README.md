@@ -5,5 +5,5 @@ A Task Manager application is a productivity tool that helps users manage, track
 # Tech Stack
 - Flutter
 - Dart
-- Rest API
+- REST APIs
   
