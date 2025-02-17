@@ -195,8 +195,9 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
     ImagePicker imagePicker = ImagePicker();
     final XFile? result = await imagePicker.pickImage(
         source: ImageSource.gallery,
+      imageQuality: 80, // reduces size ensuring compatibility
+      preferredCameraDevice: CameraDevice.rear
     );
-
     if(result!=null){
       //print('Image selected: ${_selectedImage!.path}');
       _selectedImage = result;
@@ -209,10 +210,8 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
     }
   }
   Future<void> _updateProfile() async{
-
     _updateProfileInProgress = true;
     String encodePhoto = AuthenticationController.userData?.photo ?? '';
-
     if(mounted){
       setState(() {});
     }
@@ -223,7 +222,6 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
       "firstName": _firstNameTEController.text.trim(),
       "lastName": _lastNameTEController.text.trim(),
       "mobile": _mobileTEController.text.trim(),
-
     };
 
     if(_passwordTEController.text.isNotEmpty){
@@ -233,7 +231,9 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
     if(_selectedImage != null){
       try {
         File file = File(_selectedImage!.path);
-        encodePhoto = base64Encode(file.readAsBytesSync());
+        List<int> imageBytes = await file.readAsBytes();
+        encodePhoto = base64Encode(imageBytes);
+        //encodePhoto = base64Encode(file.readAsBytesSync());
         requestBody['photo'] = encodePhoto;
       } catch(e){
          print('Image Encoding Failed $e');
@@ -260,7 +260,6 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
         Navigator.pop(context);
       }
     }
-
     else{
       if(mounted){
         showSnackBarMessage(context, response.errorMessage ?? 'Update profile failed!!Please try again');
@@ -269,10 +268,8 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
    _updateProfileInProgress = false;
     if(mounted){
       setState(() {
-
       });
     }
-
   }
 
 void _clearTextFields(){
