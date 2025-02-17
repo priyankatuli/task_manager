@@ -45,15 +45,15 @@ class MainBottomNavigationBarState extends State<MainBottomNavigationBar>{
         },
         destinations: [
           NavigationDestination(
-              icon: Icon(Icons.abc_outlined),
+              icon: Icon(Icons.task_outlined),
               label: 'New'
           ),
           NavigationDestination(
-              icon: Icon(Icons.done_all_outlined),
+              icon: Icon(Icons.done_outline_outlined),
               label: 'Completed'
           ),
           NavigationDestination(
-              icon: Icon(Icons.ac_unit_outlined),
+              icon: Icon(Icons.watch_later_outlined),
               label: 'In Progress'
           ),
           NavigationDestination(
@@ -84,7 +84,6 @@ class MainBottomNavigationBarState extends State<MainBottomNavigationBar>{
         ],
       ),
     );
-
        */
 
     );

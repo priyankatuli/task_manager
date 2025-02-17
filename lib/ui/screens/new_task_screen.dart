@@ -84,7 +84,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _onTapAddButton,
-        backgroundColor: Colors.brown.shade200,
+        backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         child: const Icon(Icons.add),
 
@@ -128,7 +128,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
 
       });
     }
-
     ApiResponse response = await ApiCall.getResponse(UrlList.newTask);
 
     if (response.isSuccess) {
@@ -179,13 +178,9 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
 
   }
 
-
   @override
   void dispose(){
     super.dispose();
-
-
-
   }
 
 }

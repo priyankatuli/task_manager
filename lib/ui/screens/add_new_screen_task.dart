@@ -104,7 +104,6 @@ bool _newTaskInProgress = false;
 
       });
     }
-
     //request data prepara kora
 
     Map<String,dynamic> requestData ={

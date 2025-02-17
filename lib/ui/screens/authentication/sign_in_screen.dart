@@ -74,8 +74,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           if(mounted){
                             setState(() {
                             });
-                          }
-                          },
+                          }},
                           icon: Icon(_showPassword ? Icons.remove_red_eye: Icons.visibility_off),)
                       ),
                       validator: (String? value) {

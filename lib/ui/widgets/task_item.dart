@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/model/task_model.dart';
 import 'package:task_manager/data/network_caller/api_call.dart';
@@ -40,15 +41,14 @@ class _TaskItemState extends State<TaskItem>{
   @override
   void initState(){
     super.initState();
-
     dropDownValue = widget.taskModel.status!;
   }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
-      color: Colors.green.withOpacity(0.3),
+      elevation: 3,
+      color: Colors.white,
       child:  ListTile(
         title: Text(widget.taskModel.title ?? '',style:const TextStyle(
           ),),
@@ -60,7 +60,7 @@ class _TaskItemState extends State<TaskItem>{
             ),
             ),
               Text(
-              'Date: ${widget.taskModel.createdDate}',
+              'Date: ${formatDate(widget.taskModel.createdDate)}',
               style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w600
@@ -71,11 +71,11 @@ class _TaskItemState extends State<TaskItem>{
               children: [
                 Chip(
                   label: Text(widget.taskModel.status ?? 'New',
-                    style: const TextStyle(
-                  color: Colors.black54,
+                    style: TextStyle(
+                  color: Colors.black,fontWeight: FontWeight.bold
                 ),),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(6),
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 2),
                 ),
@@ -85,7 +85,6 @@ class _TaskItemState extends State<TaskItem>{
                       visible: _deleteTaskInProgress == false,
                       replacement: const CenteredProgressIndicator(),
                       child: IconButton(onPressed: (){
-
                         _getDeleteTask();
                     },
                           icon:const Icon(Icons.delete,color: Colors.black54,)),
@@ -97,14 +96,10 @@ class _TaskItemState extends State<TaskItem>{
                         icon: const Icon(Icons.edit,color: Colors.black54,),
                         onSelected: (String selectedValue){
                           dropDownValue = selectedValue;
-
                           if(mounted){
-                            setState(() {
-
-                            });
+                            setState(() {});
                           }
                           _getUpdateTaskStatus(selectedValue);
-
                         },
                         itemBuilder: (BuildContext context){
                             return taskStatusList.map((String value){
@@ -128,14 +123,25 @@ class _TaskItemState extends State<TaskItem>{
     );
   }
 
+  String formatDate(String ? date){
+    if(date == null || date.isEmpty){
+      return 'No Date';
+    }
+    try{
+      DateTime utcDate = DateTime.parse(date); //convert utc to local
+      return DateFormat('dd MMM yyyy, hh:mm a').format(utcDate); //format date
+    } catch(e){
+         return 'Invalid Date';
+    }
+
+  }
+
 
   Future<void> _getDeleteTask() async{
 
     _deleteTaskInProgress = true;
     if(mounted){
-      setState(() {
-
-      });
+      setState(() {});
     }
 
     ApiResponse response = await ApiCall.getResponse(UrlList.deleteTask(widget.taskModel.sId!));
@@ -183,11 +189,8 @@ Future<void> _getUpdateTaskStatus(String status)async{
 
     _editTaskStatusInProgress = false;
     if(mounted){
-      setState(() {
-
-      });
+      setState(() {});
     }
-
 
 }
 

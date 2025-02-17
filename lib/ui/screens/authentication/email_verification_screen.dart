@@ -22,8 +22,6 @@ class EmailVerificationScreen extends StatefulWidget{
   }
 
 }
-
-
 class _EmailVerificationScreenState extends State<EmailVerificationScreen>{
 
   final TextEditingController _emailTEController = TextEditingController();
@@ -149,9 +147,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen>{
 
     _sendOtpToEmailInProgress = false;
     if(mounted){
-      setState(() {
-
-      });
+      setState(() {});
     }
 
     if(response.isSuccess && response.responseData['status'] == 'success'){
@@ -175,8 +171,6 @@ void _clearTextFields(){
 
   @override
   void dispose(){
-
-
     _emailTEController.dispose();
     super.dispose();
 

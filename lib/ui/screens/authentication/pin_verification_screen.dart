@@ -80,6 +80,8 @@ class _PinVerificationScreenState extends State<PinVerificationScreen>{
   Widget _buildPinTextField() {
     return PinCodeTextField(
                       length: 6,
+                      obscureText: true, //this hides the input
+                      obscuringCharacter: '•',
                       animationType: AnimationType.fade,
                       pinTheme: PinTheme(
                         shape: PinCodeFieldShape.box,
