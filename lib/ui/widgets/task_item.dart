@@ -79,7 +79,7 @@ class _TaskItemState extends State<TaskItem>{
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 2),
                 ),
-                ButtonBar(
+                OverflowBar(
                   children: [
                     Visibility(
                       visible: _deleteTaskInProgress == false,
