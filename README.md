@@ -25,5 +25,5 @@ flutter build apk --release
 - REST APIs
 
 ## Screenshots
-`1. Splash Screen & Authentication'<br/>
- > Sign Up & Login with JWT authentication for secure data access. 
+`1. Splash Screen & Authentication`<br/>
+ > Sign Up & Login with JWT authentication for secure data access. OTP based verification to ensure password reset security.
