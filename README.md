@@ -28,3 +28,4 @@ git clone "https://github.com/priyankatuli/task_manager.git"
 ## Screenshots
 `1. Splash Screen & Authentication`
 > Sign Up & Login with JWT authentication for secure data access. OTP based verification to ensure password reset security.
+<img align="center" width="200" src=""></img>
