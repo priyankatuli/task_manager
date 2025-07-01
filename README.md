@@ -21,10 +21,10 @@ git clone "https://github.com/priyankatuli/task_manager.git"
    flutter build apk --release
 ```
 ## Tech Stack
-- Flutter
-- Dart
-- Rest API
+  - Flutter
+  - Dart
+  - Rest API
 
 ## Screenshots
 `1. Splash Screen & Authentication`
-> Sign Up & Login with JWT authentication for secure data access. OTP based verification to ensure password reset security. 
+> Sign Up & Login with JWT authentication for secure data access. OTP based verification to ensure password reset security.
