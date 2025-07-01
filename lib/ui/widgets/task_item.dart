@@ -57,15 +57,13 @@ class _TaskItemState extends State<TaskItem>{
           children: [
             Text(widget.taskModel.description ?? '',
             style: const TextStyle(
-            ),
-            ),
+            ),),
               Text(
               'Date: ${formatDate(widget.taskModel.createdDate)}',
               style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w600
               ),),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -129,13 +127,13 @@ class _TaskItemState extends State<TaskItem>{
     }
     try{
       DateTime utcDate = DateTime.parse(date); //convert utc to local
-      return DateFormat('dd MMM yyyy, hh:mm a').format(utcDate); //format date
+      DateTime localData = utcDate.toLocal();
+      return DateFormat('dd MMM yyyy, hh:mm a').format(localData); //format date
     } catch(e){
          return 'Invalid Date';
     }
 
   }
-
 
   Future<void> _getDeleteTask() async{
 

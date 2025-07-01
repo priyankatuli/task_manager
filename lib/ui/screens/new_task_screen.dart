@@ -45,7 +45,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       //appBar: //profileAppBar(),
-
       body: BackgroundWidget(
         child:  Padding(
           padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
@@ -72,7 +71,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                               _getNewTasks();
                               _getNewTaskStatusCount();
                             }
-
                           );
                         },),
                     ),

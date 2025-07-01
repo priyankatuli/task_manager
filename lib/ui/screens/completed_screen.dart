@@ -86,7 +86,6 @@ class _NewTaskScreenState extends State<CompletedScreen>{
 
       });
     }
-
     ApiResponse response = await ApiCall.getResponse(UrlList.completedTask);
 
     if(response.isSuccess){
