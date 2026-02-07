@@ -1,16 +1,14 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/screens/authentication/sign_in_screen.dart';
-import 'package:task_manager/UI/screens/authentication/update_profile_screen.dart';
-import 'package:task_manager/UI/utility/app_colors.dart';
-import 'package:task_manager/ui/controllers/authentication_controller.dart';
+import 'package:task_manager/presentation/ui/controllers/authentication_controller.dart';
+import 'package:task_manager/presentation/ui/screens/authentication/sign_in_screen.dart';
+import 'package:task_manager/presentation/ui/screens/authentication/update_profile_screen.dart';
+import 'package:task_manager/presentation/ui/utility/app_colors.dart';
 
 AppBar profileAppBar(context,
     [bool isUpdate= false]) {
 
   return AppBar(
-
     backgroundColor: AppColors.themeColor,
     leading: GestureDetector(
       onTap: (){

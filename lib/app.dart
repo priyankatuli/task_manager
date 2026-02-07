@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/screens/authentication/splash_screen.dart';
+import 'package:task_manager/presentation/ui/screens/authentication/splash_screen.dart';
 
 class TaskManagerApp extends StatefulWidget {
   const TaskManagerApp({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/widgets/background_widget.dart';
-import 'package:task_manager/UI/widgets/profile_app_bar.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/network_caller/api_call.dart';
-import 'package:task_manager/ui/utility/url_list.dart';
-import 'package:task_manager/ui/widgets/centered_progress_Indicator.dart';
-import 'package:task_manager/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/utility/url_list.dart';
+import 'package:task_manager/presentation/ui/widgets/background_widget.dart';
+import 'package:task_manager/presentation/ui/widgets/centered_progress_Indicator.dart';
+import 'package:task_manager/presentation/ui/widgets/profile_app_bar.dart';
+import 'package:task_manager/presentation/ui/widgets/snack_bar_message.dart';
 
 
 class AddNewScreenTask extends StatefulWidget{

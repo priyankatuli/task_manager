@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:task_manager/UI/screens/authentication/sign_in_screen.dart';
 import 'package:task_manager/app.dart';
 import 'package:task_manager/data/model/api_response.dart';
-import 'package:task_manager/ui/controllers/authentication_controller.dart';
+import 'package:task_manager/presentation/ui/controllers/authentication_controller.dart';
+import 'package:task_manager/presentation/ui/screens/authentication/sign_in_screen.dart';
 
 class ApiCall {
 

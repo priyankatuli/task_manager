@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/widgets/background_widget.dart';
-import 'package:task_manager/UI/widgets/task_item.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/model/task_list_wrapper_model.dart';
 import 'package:task_manager/data/model/task_model.dart';
 import 'package:task_manager/data/network_caller/api_call.dart';
-import 'package:task_manager/ui/utility/url_list.dart';
-import 'package:task_manager/ui/widgets/centered_progress_Indicator.dart';
-import 'package:task_manager/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/utility/url_list.dart';
+import 'package:task_manager/presentation/ui/widgets/background_widget.dart';
+import 'package:task_manager/presentation/ui/widgets/centered_progress_Indicator.dart';
+import 'package:task_manager/presentation/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/widgets/task_item.dart';
 
 
 class InProgressScreen extends StatefulWidget{
@@ -67,14 +67,9 @@ class _NewTaskScreenState extends State<InProgressScreen>{
               itemCount: inProgressTaskList.length,
             ),
         ),
-      )
-    ),],
-    ))
-    )
-    );
-
+      )),],
+    )),));
   }
-
   Future<void> _getInProgress()async{
     _inProgress = true;
     if(mounted){
@@ -94,19 +89,9 @@ class _NewTaskScreenState extends State<InProgressScreen>{
         showSnackBarMessage(context, response.errorMessage ?? 'In progress task failed!!please try again');
       }
     }
-
     _inProgress = false;
     if(mounted){
-      setState(() {
-
-      });
-
+      setState(() {});
     }
-
-    
-    
   }
-
-
-
 }

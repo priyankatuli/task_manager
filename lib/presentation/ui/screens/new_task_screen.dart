@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/screens/add_new_screen_task.dart';
-import 'package:task_manager/UI/widgets/background_widget.dart';
-import 'package:task_manager/UI/widgets/task_item.dart';
-import 'package:task_manager/UI/widgets/task_summery_card.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/model/task_list_wrapper_model.dart';
 import 'package:task_manager/data/model/task_model.dart';
 import 'package:task_manager/data/model/task_status_count_model.dart';
 import 'package:task_manager/data/model/task_status_count_wrapper_model.dart';
 import 'package:task_manager/data/network_caller/api_call.dart';
-import 'package:task_manager/ui/utility/url_list.dart';
-import 'package:task_manager/ui/widgets/centered_progress_Indicator.dart';
-import 'package:task_manager/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/screens/add_new_screen_task.dart';
+import 'package:task_manager/presentation/ui/utility/url_list.dart';
+import 'package:task_manager/presentation/ui/widgets/background_widget.dart';
+import 'package:task_manager/presentation/ui/widgets/centered_progress_Indicator.dart';
+import 'package:task_manager/presentation/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/widgets/task_item.dart';
+import 'package:task_manager/presentation/ui/widgets/task_summery_card.dart';
 
 
 class NewTaskScreen extends StatefulWidget{

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:task_manager/UI/utility/assets_path.dart';
+import 'package:task_manager/presentation/ui/utility/assets_path.dart';
 
 class BackgroundWidget extends StatelessWidget{
   const BackgroundWidget({super.key, required this.child});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/UI/screens/cancelled_task_screen.dart';
-import 'package:task_manager/UI/screens/completed_screen.dart';
-import 'package:task_manager/UI/screens/in_progress_screen.dart';
-import 'package:task_manager/UI/screens/new_task_screen.dart';
-//import 'package:task_manager/UI/utility/app_colors.dart';
-import 'package:task_manager/UI/widgets/profile_app_bar.dart';
+import 'package:task_manager/presentation/ui/screens/cancelled_task_screen.dart';
+import 'package:task_manager/presentation/ui/screens/completed_screen.dart';
+import 'package:task_manager/presentation/ui/screens/in_progress_screen.dart';
+import 'package:task_manager/presentation/ui/screens/new_task_screen.dart';
+import 'package:task_manager/presentation/ui/widgets/profile_app_bar.dart';
+
 
 class MainBottomNavigationBar extends StatefulWidget{
   const MainBottomNavigationBar({super.key});

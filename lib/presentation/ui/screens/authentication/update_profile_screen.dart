@@ -1,20 +1,18 @@
 //update the screen
-
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:task_manager/UI/widgets/background_widget.dart';
-import 'package:task_manager/UI/widgets/profile_app_bar.dart';
 import 'package:task_manager/data/model/api_response.dart';
 import 'package:task_manager/data/model/user_data_model.dart';
 import 'package:task_manager/data/network_caller/api_call.dart';
-import 'package:task_manager/ui/controllers/authentication_controller.dart';
-import 'package:task_manager/ui/utility/app_constants.dart';
-import 'package:task_manager/ui/utility/url_list.dart';
-import 'package:task_manager/ui/widgets/centered_progress_Indicator.dart';
-import 'package:task_manager/ui/widgets/snack_bar_message.dart';
+import 'package:task_manager/presentation/ui/controllers/authentication_controller.dart';
+import 'package:task_manager/presentation/ui/utility/app_constants.dart';
+import 'package:task_manager/presentation/ui/utility/url_list.dart';
+import 'package:task_manager/presentation/ui/widgets/background_widget.dart';
+import 'package:task_manager/presentation/ui/widgets/centered_progress_Indicator.dart';
+import 'package:task_manager/presentation/ui/widgets/profile_app_bar.dart';
+import 'package:task_manager/presentation/ui/widgets/snack_bar_message.dart';
 
 class UpdateProfileScreen extends StatefulWidget{
   const UpdateProfileScreen({super.key});
@@ -35,9 +33,7 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
   final TextEditingController _passwordTEController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   XFile? _selectedImage;
-
   bool _updateProfileInProgress = false;
 
 
@@ -97,7 +93,6 @@ class  _UpdateProfileScreenState extends State<UpdateProfileScreen>{
                       ),
                       const SizedBox(height: 8,),
                       TextFormField(
-
                         controller: _mobileTEController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         keyboardType: TextInputType.phone,
