@@ -67,7 +67,7 @@ git clone "https://github.com/priyankatuli/task_manager.git"
       Update Profile
     </td>
  <td align="center">
-      <img src="assets/screenshots/UpdatedProfile.jpg" width="220"/><br/>
+      <img src="assets/screenshots/" width="220"/><br/>
       Add New Task
     </td>
   </tr>
