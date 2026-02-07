@@ -39,8 +39,9 @@ git clone "https://github.com/priyankatuli/task_manager.git"
       Sign Up
     </td>
   </tr>
-
+</table>
 `2. Forget Password Screen`
+<table>
 <tr>
     <td align="center">
       <img src="assets/screenshots/Verify.jpg" width="220"/><br/>
