@@ -26,9 +26,33 @@ git clone "https://github.com/priyankatuli/task_manager.git"
 - Rest API
 
 ### 📸 Screenshots
-`1. Splash Screen & Authentication`
+`1. Login & Sign Up Screen`
 > Sign Up & Login with JWT authentication for secure data access. OTP based verification to ensure password reset security.
-| Sign In & Sign Up Screen | |
-> <img src="assets/screenshots/Login.jpg" width="250"/> 
-|-------------------------|--|
-<img src="assets/screenshots/SignUp.jpg" width="250"/> 
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/screenshots/Login.jpg" width="220"/><br/>
+      Login
+    </td>
+    <td align="center">
+      <img src="assets/screenshots/SignUp.jpg" width="220"/><br/>
+      Sign Up
+    </td>
+  </tr>
+
+`2. Forget Password Screen`
+<tr>
+    <td align="center">
+      <img src="assets/screenshots/Verify.jpg" width="220"/><br/>
+      Login
+    </td>
+    <td align="center">
+      <img src="assets/screenshots/OtpScreen.jpg" width="220"/><br/>
+      Sign Up
+    </td>
+    <td align="center">
+      <img src="assets/screenshots/ResetPassword.jpg" width="220"/><br/>
+      Sign Up
+    </td>
+  </tr>
+</table>
