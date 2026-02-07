@@ -40,20 +40,57 @@ git clone "https://github.com/priyankatuli/task_manager.git"
     </td>
   </tr>
 </table>
+
 `2. Forget Password Screen`
 <table>
 <tr>
-    <td align="center">
+    <td align="center" title="">
       <img src="assets/screenshots/Verify.jpg" width="220"/><br/>
-      Login
+      Forget Password
     </td>
     <td align="center">
       <img src="assets/screenshots/OtpScreen.jpg" width="220"/><br/>
-      Sign Up
+      OTP
     </td>
     <td align="center">
       <img src="assets/screenshots/ResetPassword.jpg" width="220"/><br/>
-      Sign Up
+      Reset Password
+    </td>
+  </tr>
+</table>
+
+`3. Update Profile Screen & Add New Task Screen`
+<table>
+<tr>
+    <td align="center">
+      <img src="assets/screenshots/UpdatedProfile.jpg" width="220"/><br/>
+      Update Profile
+    </td>
+ <td align="center">
+      <img src="assets/screenshots/UpdatedProfile.jpg" width="220"/><br/>
+      Add New Task
+    </td>
+  </tr>
+</table>
+
+`4. Task Management`
+<table>
+<tr>
+    <td align="center">
+      <img src="assets/screenshots/New.jpg" width="220"/><br/>
+     New Task Screen
+    </td>
+ <td align="center">
+      <img src="assets/screenshots/Completed.jpg" width="220"/><br/>
+     New Task Screen
+    </td>
+ <td align="center">
+      <img src="assets/screenshots/InProgress.jpg" width="220"/><br/>
+     New Task Screen
+    </td>
+ <td align="center">
+      <img src="assets/screenshots/Cancelled.jpg" width="220"/><br/>
+     New Task Screen
     </td>
   </tr>
 </table>
